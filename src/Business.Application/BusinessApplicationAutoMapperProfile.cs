@@ -11,7 +11,6 @@ namespace Business
             /* You can configure your AutoMapper mapping configuration here.
              * Alternatively, you can split your mapping configurations
              * into multiple profile classes for a better organization. */
-
             //用户添加映射  有Dto验证
             CreateMap<MyUserModel, MyUserDto>(); 
             CreateMap<CreateUpdateMyUserDto,MyUserModel > ();
