@@ -5,12 +5,9 @@ using System.Text;
 
 namespace Business.Dto
 {
-   public  class CreateUpdateMyPowerDto
+    public  class CreateUpdateCategoryDto
     {
-
         [Required]
-        public string PowerName { get; set; }  //名称
-        [Required]
-        public string PowerDetail { get; set; } //详情
+        public string CategoryName { get; set; } //种类
     }
 }

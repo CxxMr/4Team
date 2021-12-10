@@ -5,12 +5,11 @@ using System.Text;
 
 namespace Business.Dto
 {
-   public  class CreateUpdateMyPowerDto
+    public class CreateUpdateCityDto
     {
-
         [Required]
-        public string PowerName { get; set; }  //名称
+        public string CityName { get; set; }//城市名称
         [Required]
-        public string PowerDetail { get; set; } //详情
+        public string CityTid { get; set; }//外键
     }
 }

@@ -17,3 +17,6 @@ namespace Business.Model.Goods
         public string CityTid { get; set; }//外键
     }
 }
+
+
+

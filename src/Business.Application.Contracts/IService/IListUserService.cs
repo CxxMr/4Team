@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
+using Business.Helper.Enum;
 
 namespace Business.IService
 {
-    public interface IMyTreeService : ICrudAppService<MyTreeDto, Guid, PagedAndSortedResultRequestDto, CreateUpdateMyTreeDto>
+    public interface IListUserService : IApplicationService
     {
-        public Task<List<MyTreeDto>> GetTreeAsync(string guid);
+        //定义一个方法
+           Task<ResulstHelper<PagedResultDto<ListUserDto>>>  PagedResultDto(int PageIndex, int PageSize);
     }
 }
+    

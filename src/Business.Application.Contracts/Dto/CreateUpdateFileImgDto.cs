@@ -5,12 +5,9 @@ using System.Text;
 
 namespace Business.Dto
 {
-   public  class CreateUpdateMyPowerDto
+   public  class CreateUpdateFileImgDto
     {
-
         [Required]
-        public string PowerName { get; set; }  //名称
-        [Required]
-        public string PowerDetail { get; set; } //详情
+        public string ImgUrl { get; set; }  //图片路径
     }
 }

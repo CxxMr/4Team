@@ -8,7 +8,7 @@ using Volo.Abp.Domain.Entities;
 namespace Business.Model.Goods
 {
     /// <summary>
-    /// 类别表  显示用的
+    /// 规格表  显示用的
     /// </summary>
     public class SpecificationModel : BasicAggregateRoot<Guid>
     {

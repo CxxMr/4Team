@@ -1,5 +1,6 @@
 ﻿
 using Business.Dto;
+using Business.Helper.Enum;
 using Business.IService;
 using Business.Model.RBAC;
 using System;
@@ -14,9 +15,16 @@ using Volo.Abp.Domain.Repositories;
 namespace Business.Service
 {
 
-    public class MyUserService: CrudAppService<MyUserModel, MyUserDto, Guid, PagedAndSortedResultRequestDto,CreateUpdateMyUserDto>,IMyUserService
+    public class MyUserService: CrudAppService<MyUserModel, MyUserDto, Guid, PagedAndSortedResultRequestDto,CreateUpdateMyUserDto>, IMyUserService
     {
-        public MyUserService(IRepository<MyUserModel,Guid> userModels) : base(userModels) { }
 
+        private readonly IRepository<MyUserModel, Guid> userModels;
+
+        public MyUserService(IRepository<MyUserModel,Guid> _userModels) : base(_userModels) 
+        {
+            userModels = _userModels;
+        }
+
+        
     }
 }

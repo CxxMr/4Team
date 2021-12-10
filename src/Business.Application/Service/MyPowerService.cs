@@ -13,7 +13,12 @@ namespace Business.Service
         PagedAndSortedResultRequestDto,
         CreateUpdateMyPowerDto>,IMyPowerService
     {
+
+
         public MyPowerService(IRepository<MyPowerModel, Guid> powerModels) : base(powerModels) { }
+
+
+
     }
     
 }

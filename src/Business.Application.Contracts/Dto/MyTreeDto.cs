@@ -7,8 +7,8 @@ namespace Business.Dto
 {
    public  class MyTreeDto : AuditedEntityDto<Guid>
     {
-        public string TreeName { get; set; }  //名称
-        public string TreeTid { get; set; } //递归外键
-        public string TreeUrl { get; set; } //地址
+        public string Label { get; set; }
+        public string Url { get; set; }
+        public List<MyTreeDto> Children { get; set; }
     }
 }
