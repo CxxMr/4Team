@@ -28,7 +28,6 @@ namespace Business.Service
         {
             return await GetTreeMunsAsync(guid);
         }
-        
         //递归
         private async Task<List<MyTreeDto>> GetTreeMunsAsync(string guid)
         {

@@ -2,6 +2,7 @@
 using Business.Helper.Enum;
 using Business.IUserLogin;
 using Business.Model.RBAC;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,6 @@ namespace Business.UserLogin
         {
             myRoleModels = _myRoleModels;
         }
-
-
         /// <summary>
         /// 注册
         /// </summary>
@@ -46,15 +45,13 @@ namespace Business.UserLogin
                     Message = "注册失败！",
                 };
             }
-
         }
-
         /// <summary>
         /// 登录
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-
+        [HttpPost]
        public  async Task<MyUserDto>  PostUserLogin(MyUserDto dto)
         {
             dto.UserPwd = MD5.MD5Encrypt.MD5Encrypt16(dto.UserPwd);
