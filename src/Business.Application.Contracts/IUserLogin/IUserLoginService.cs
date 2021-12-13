@@ -14,6 +14,6 @@ namespace Business.IUserLogin
         ResulstHelper<int> Registered(CreateUpdateMyUserDto dto);
 
        public  Task<MyUserDto>  PostUserLogin(MyUserDto dto);
-
+         
     }
 }

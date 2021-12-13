@@ -11,7 +11,7 @@ namespace Business.Model.Goods
     ///需要连查
     /// </summary>
    public  class CategoryModel : BasicAggregateRoot<Guid>
-    {
+    { 
         public string CategoryName { get; set; } //种类
     }
 }

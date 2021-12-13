@@ -14,7 +14,7 @@ using Volo.Abp.Domain.Repositories;
 namespace Business.Service
 {
     public class SpecificationService : CrudAppService<SpecificationModel, SpecificationDto, Guid, PagedAndSortedResultRequestDto, CreateUpdateSpecificationDto>, ISpecificationService
-    {
+    {   
         public SpecificationService(IRepository<SpecificationModel, Guid> myRoleModels) : base(myRoleModels) { }
     }
 }
