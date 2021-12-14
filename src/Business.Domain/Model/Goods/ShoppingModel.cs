@@ -9,7 +9,6 @@ namespace Business.Model.Goods
     /// </summary>
     public class ShoppingModel:BasicAggregateRoot<Guid>
     {
-
         public string GoodsName { get; set; }//商品名称
         public float GoodsPrice { get; set; }//商品价格
         public string GoodsImg { get; set; }//商品图片
