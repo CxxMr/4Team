@@ -25,7 +25,6 @@ namespace Business
             public static int Main(string[] args)
             {
 
-
             //HttpWebRequest Request = (HttpWebRequest)WebRequest.Create("https://www.taobao.com/");
             //Request.Timeout = 20 * 1000;//请求超时。
             //Request.AllowAutoRedirect = true; //网页自动跳转。
