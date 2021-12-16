@@ -12,16 +12,25 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Business.Helper;
+using Microsoft.Extensions.Configuration;
+using Business.IIDS4;
+using Business.IDS4;
+using Business.IService;
 
 namespace Business.UserLogin
 {
+
     public class UserLoginService : ApplicationService, IUserLoginService
     {
         private readonly IRepository<MyUserModel, Guid> myRoleModels;
-        public UserLoginService(IRepository<MyUserModel, Guid> _myRoleModels) : base()
+        private IConfiguration GetConfiguration;
+
+        public UserLoginService(IRepository<MyUserModel, Guid> _myRoleModels , IConfiguration _configuration) : base()
         {
             myRoleModels = _myRoleModels;
+            GetConfiguration = _configuration;
         }
+     
         /// <summary>
         /// 注册
         /// </summary>
@@ -67,7 +76,13 @@ namespace Business.UserLogin
             return date;
         }
 
-    
+
+       public  async Task<LiveShopResData<string>>  GetIds4Async(string LoginName, string LoginPwd)
+        {
+            IDS4Service ids4Service = new IDS4Service(GetConfiguration);
+            string token = await ids4Service.GetIdsTokenAsync(LoginName,LoginPwd);
+            return new LiveShopResData<string>() { Status = ShopStatus.Succeed, Msg = "获取token成功", Info = token };
+        }
     }
 }
 

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Helper.Enum
+namespace Business
 {
-   public  enum EnumHelper
+   public  enum ShopStatus
     {
+        Succeed = 200,
         /// <summary>
-        /// 成功
+        /// 失败
         /// </summary>
-            Success=200,
+        Failure = 400,
     }
 }

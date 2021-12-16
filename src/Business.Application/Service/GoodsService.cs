@@ -1,10 +1,14 @@
 ﻿using Business.Dto;
+using Business.Helper;
+using Business.Helper.Enum;
 using Business.IService;
 using Business.Model.Goods;
 using Business.Model.RBAC;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
@@ -21,22 +25,20 @@ namespace Business.Service
         {
             myRoleModels = _myRoleModels;
         }
-        //public async Task<IEnumerator<GoodsDto>> PageIndex(iNt PageIndex, int PageSize, string Name)
-        //{
-        //    //var Goods = await myRoleModels.GetListAsync();
-            
-        //    //if(!string.IsNullOrWhiteSpace(Name))
-        //    //{
-        //    //    Goods = Goods.Where(x => x.GoodsName.Contains(Name)).ToList();
-        //    //}
-        //    //var total = Goods.Count();
-        //    //Goods = Goods.Skip((PageIndex - 1) * PageSize).Take(PageSize).ToList();
-         
-        //}
+     
+
         public Task<IEnumerator<GoodsDto>> PageIndex(int PageIndex, int PageSize, string Name)
         {
             throw new NotImplementedException();
         }
+
+
+
+
+
+
+
+
     }
 }
 

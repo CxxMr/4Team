@@ -17,5 +17,6 @@ namespace Business.Dto
         public string GoodsId { get; set; } //外键
         public string CategoryId { get; set; } //种类
         public string Specificationid { get; set; } //商品规格
+        public string GoodsDescribe { get; set; }
     }
 }

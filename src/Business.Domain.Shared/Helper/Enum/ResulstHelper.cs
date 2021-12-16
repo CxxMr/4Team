@@ -9,7 +9,7 @@ namespace Business.Helper.Enum
         /// <summary>
         /// 状态码
         /// </summary>
-       public Helper.Enum.EnumHelper ResultState { get; set; }
+       public Business.ShopStatus ResultState { get; set; }
         /// <summary>
         /// 错误信息
         /// </summary>
@@ -18,8 +18,6 @@ namespace Business.Helper.Enum
         /// 数据信息
         /// </summary>
         public T Data { get; set; }
-
-
 
     }
 
