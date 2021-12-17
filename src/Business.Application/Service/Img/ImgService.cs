@@ -16,6 +16,6 @@ namespace Business.Service.Img
         {
             var url= UploadHelper.Upload(file);
             return url;
-        }
+      }
     }
 }

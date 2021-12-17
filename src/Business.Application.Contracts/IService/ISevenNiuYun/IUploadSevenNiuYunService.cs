@@ -8,14 +8,10 @@ namespace Business.IService.ISevenNiuYun
 {
     public  interface IUploadSevenNiuYunService:IApplicationService
     {
-        public abstract UploadQiNiuResult UploadQiNiuResult(byte[] stream, string fileName);
+        public bool UpLoading(string upLoadFile);
     }
 
 
-    public class UploadQiNiuResult
-     {  
-       public string Hash { get; set; }
-       public string Key { get; set; }
-    }
+   
 }
 

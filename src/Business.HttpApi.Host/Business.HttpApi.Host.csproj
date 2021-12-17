@@ -37,6 +37,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Upload\202112161506530249.jpg" />
+    <Content Include="Upload\202112162122103504.jpg" />
+    <Content Include="Upload\202112162124056147.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Upload\" />
   </ItemGroup>
 

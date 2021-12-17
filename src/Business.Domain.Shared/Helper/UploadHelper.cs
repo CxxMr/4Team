@@ -21,9 +21,12 @@ namespace Business.Helper
                 file.CopyTo(fs);
                 fs.Flush();//清空文件流
             }
-            var url= "http://localhost:8067/" + FileName;
+            var url= "https://localhost:44390/" + Path;
 
             return url;
         }
+
+
+
     }
 }
