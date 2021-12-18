@@ -1,4 +1,6 @@
-﻿using Business.IService.ISevenNiuYun;
+﻿using Business.Helper;
+using Business.IService.ISevenNiuYun;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Qiniu.Http;
 using Qiniu.Storage;
@@ -14,8 +16,13 @@ namespace Business.Service.SevenNiuYun
 {
     public class UploadSevenNiuYunService : ApplicationService, IUploadSevenNiuYunService
     {
+        public bool ImgHelper(IFormFile file)
+        {
+               var url = UploadHelper.Upload(file);
+            return UpLoading(url);
+        }
 
-        public bool UpLoading(string upLoadFile)
+        public  bool UpLoading(string upLoadFile)
         {
            bool bresult = false;
             string fileName = System.IO.Path.GetFileNameWithoutExtension(upLoadFile);
@@ -32,15 +39,12 @@ namespace Business.Service.SevenNiuYun
             //可以设置成为自己动分配区域的
             //现在不能自动分配区域 华东区域
             Config config = new Config();
-            config.Zone = Zone.ZONE_US_North;
+            config.Zone = Zone.ZONE_CN_East;
             config.UseHttps = true;
             config.UseCdnDomains = true;
             config.ChunkSize = ChunkUnit.U512K;
             FormUploader target = new FormUploader(config);
             HttpResult result = target.UploadFile(filePath, key, token, null);
-
-
-
                 
 
             string back = result.Code.ToString();

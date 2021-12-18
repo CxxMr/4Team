@@ -15,6 +15,7 @@ namespace Business.Service.Img
         public string ImgHelper(IFormFile file)
         {
             var url= UploadHelper.Upload(file);
+
             return url;
       }
     }
