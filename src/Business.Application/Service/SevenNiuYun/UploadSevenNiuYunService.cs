@@ -16,26 +16,24 @@ namespace Business.Service.SevenNiuYun
 {
     public class UploadSevenNiuYunService : ApplicationService, IUploadSevenNiuYunService
     {
-        public bool ImgHelper(IFormFile file)
+        public string ImgHelper(IFormFile file)
         {
                var url = UploadHelper.Upload(file);
             return UpLoading(url);
         }
 
-        public  bool UpLoading(string upLoadFile)
+        public string UpLoading(string upLoadFile)
         {
-           bool bresult = false;
+           string url = "";
             string fileName = System.IO.Path.GetFileNameWithoutExtension(upLoadFile);
             Mac mac = new Mac("F6ntKDTCjPQ_Hx3NmzBPs6r72YVP5O_0_yz0nSmr", "aTTNhOJu63M8c5hwrRYQuO9OZJuZ4F7hyCSyibeO");
             string key = fileName;//文件名称
             string filePath = upLoadFile;//上传路径
-
             PutPolicy putPolicy = new PutPolicy();
             putPolicy.Scope = "20211904:" + key;
             putPolicy.SetExpires(3600);
             putPolicy.DeleteAfterDays = 1;
             string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
-
             //可以设置成为自己动分配区域的
             //现在不能自动分配区域 华东区域
             Config config = new Config();
@@ -45,14 +43,13 @@ namespace Business.Service.SevenNiuYun
             config.ChunkSize = ChunkUnit.U512K;
             FormUploader target = new FormUploader(config);
             HttpResult result = target.UploadFile(filePath, key, token, null);
-                
-
             string back = result.Code.ToString();
             //LogHelper.WriteLog_LocalTxt("result:" + result);
             if (result.Code.ToString() == "200")
-                bresult = true;
+                 return url = "http://r4762mr9c.hd-bkt.clouddn.com/" + key;
 
-            return bresult;
+            return url;
+
         }
 
         /// 实现将文件上传到七牛云

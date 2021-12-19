@@ -9,9 +9,9 @@ namespace Business.IService.ISevenNiuYun
 {
     public  interface IUploadSevenNiuYunService:IApplicationService
     {
-       public  bool ImgHelper(IFormFile file);
+       public string ImgHelper(IFormFile file);
 
-        public bool UpLoading(string upLoadFile);
+        public string UpLoading(string upLoadFile);
     }
 
 
